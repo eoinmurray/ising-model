@@ -9,74 +9,74 @@
   },
   {
     "temperature": 0.6157894736842106,
-    "specific_heat": 0.0
+    "specific_heat": 5.800894732997294
   },
   {
     "temperature": 0.8736842105263158,
-    "specific_heat": 0.00334033734939759
+    "specific_heat": 0.012387922775439106
   },
   {
     "temperature": 1.1315789473684212,
-    "specific_heat": 0.048831534797187645
+    "specific_heat": 0.04610291366143861
   },
   {
     "temperature": 1.3894736842105266,
-    "specific_heat": 0.13806766551882454
+    "specific_heat": 0.1661697254361799
   },
   {
     "temperature": 1.6473684210526318,
-    "specific_heat": 0.2682032234686483
+    "specific_heat": 0.2570852680337658
   },
   {
     "temperature": 1.905263157894737,
-    "specific_heat": 0.5439076951253013
+    "specific_heat": 0.5329959987790359
   },
   {
     "temperature": 2.1631578947368424,
-    "specific_heat": 0.969891445208115
+    "specific_heat": 0.9516733200490168
   },
   {
     "temperature": 2.421052631578948,
-    "specific_heat": 1.1893327479017015
+    "specific_heat": 1.1701520604158788
   },
   {
     "temperature": 2.678947368421053,
-    "specific_heat": 0.7291295469138993
+    "specific_heat": 0.7937738800761148
   },
   {
     "temperature": 2.936842105263158,
-    "specific_heat": 0.4408372965403835
+    "specific_heat": 0.5044897017766986
   },
   {
     "temperature": 3.1947368421052635,
-    "specific_heat": 0.34749438360261525
+    "specific_heat": 0.3748507978037666
   },
   {
     "temperature": 3.452631578947369,
-    "specific_heat": 0.2424876299821534
+    "specific_heat": 0.24643457763236165
   },
   {
     "temperature": 3.710526315789474,
-    "specific_heat": 0.21943228822695035
+    "specific_heat": 0.22992106959609673
   },
   {
     "temperature": 3.9684210526315793,
-    "specific_heat": 0.17523367574527365
+    "specific_heat": 0.18257692409008716
   },
   {
     "temperature": 4.226315789473684,
-    "specific_heat": 0.14142442513054254
+    "specific_heat": 0.15935438198908514
   },
   {
     "temperature": 4.484210526315789,
-    "specific_heat": 0.12731475139412377
+    "specific_heat": 0.11635615076373737
   },
   {
     "temperature": 4.742105263157895,
-    "specific_heat": 0.11634039305691908
+    "specific_heat": 0.1068245621771838
   },
   {
     "temperature": 5.0,
-    "specific_heat": 0.1000635136
+    "specific_heat": 0.1016749504
   }
 ]

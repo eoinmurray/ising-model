@@ -44,6 +44,25 @@ _3. Run the simulation._
 uv run src/simulation.py
 ```
 
+You should see an output like:
+
+```sh
+[MAIN] Running simulation
+[INIT] Creating Simulation object.
+[INIT] Initial spins created.
+[SIMULATE] Starting simulation across given temperatures.
+  => Setting temperature = 0.1
+  => Reinitializing spins for new temperature range.
+  => Performing burn-in steps...
+  => Collecting data for 1000 steps at T=0.1
+  => Setting temperature = 0.35789473684210527
+  => Performing burn-in steps...
+
+  ...continued output...
+```
+
+It typically takes the simulation 60 seconds to run.
+
 ### Typesrcript and Observable Framework installation
 
 _1. Install nodejs and npm._

@@ -9,74 +9,74 @@
   },
   {
     "temperature": 0.6157894736842106,
-    "susceptibility": 0.0
+    "susceptibility": 0.0012131379764102569
   },
   {
     "temperature": 0.8736842105263158,
-    "susceptibility": 1.824000000000004e-08
+    "susceptibility": 6.76445783132531e-08
   },
   {
     "temperature": 1.1315789473684212,
-    "susceptibility": 3.605581395348843e-07
+    "susceptibility": 3.788122790697681e-07
   },
   {
     "temperature": 1.3894736842105266,
-    "susceptibility": 1.5683175757575774e-06
+    "susceptibility": 1.8937559090909114e-06
   },
   {
     "temperature": 1.6473684210526318,
-    "susceptibility": 4.1856720766773175e-06
+    "susceptibility": 4.247171373801917e-06
   },
   {
     "temperature": 1.905263157894737,
-    "susceptibility": 1.5271876685082866e-05
+    "susceptibility": 1.566418784530386e-05
   },
   {
     "temperature": 2.1631578947368424,
-    "susceptibility": 7.518799454987832e-05
+    "susceptibility": 6.61225222384428e-05
   },
   {
     "temperature": 2.421052631578948,
-    "susceptibility": 0.0017457251531304344
+    "susceptibility": 0.0011194976848695648
   },
   {
     "temperature": 2.678947368421053,
-    "susceptibility": 0.0006753685441257365
+    "susceptibility": 0.0008371850609823181
   },
   {
     "temperature": 2.936842105263158,
-    "susceptibility": 0.0004012622598566308
+    "susceptibility": 0.0004296871710394265
   },
   {
     "temperature": 3.1947368421052635,
-    "susceptibility": 0.0002623001346952224
+    "susceptibility": 0.00025231671334431633
   },
   {
     "temperature": 3.452631578947369,
-    "susceptibility": 0.00017094199902439026
+    "susceptibility": 0.00015593035737804876
   },
   {
     "temperature": 3.710526315789474,
-    "susceptibility": 0.00015520038156028367
+    "susceptibility": 0.00013681478065248227
   },
   {
     "temperature": 3.9684210526315793,
-    "susceptibility": 0.00011250759283819628
+    "susceptibility": 0.00010840025549071617
   },
   {
     "temperature": 4.226315789473684,
-    "susceptibility": 9.337183581569116e-05
+    "susceptibility": 8.471654600249064e-05
   },
   {
     "temperature": 4.484210526315789,
-    "susceptibility": 7.988231906103286e-05
+    "susceptibility": 7.531249971830988e-05
   },
   {
     "temperature": 4.742105263157895,
-    "susceptibility": 6.111626796892342e-05
+    "susceptibility": 6.079414268590455e-05
   },
   {
     "temperature": 5.0,
-    "susceptibility": 5.96680672e-05
+    "susceptibility": 5.933272000000001e-05
   }
 ]

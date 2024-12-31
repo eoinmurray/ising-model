@@ -1,3 +1,10 @@
+"""
+Simulation file
+
+Note: its recommended to keep everything in one file since we copy and paste into chatgpt
+a lot.
+"""
+
 import matplotlib.pyplot as plt
 import time
 import numpy as np
