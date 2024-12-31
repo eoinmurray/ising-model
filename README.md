@@ -9,7 +9,7 @@ Features
 - Plot and save results for visualization.
 - Export simulation data in JSON format.
 
-## Installation
+## Python Simulation Installation
 
 _1. Clone the Repository_
 
@@ -18,7 +18,7 @@ git clone https://github.com/eoinmurray/ising-model.git
 cd ising-model
 ```
 
-Set Up a Python Environment using [uv](https://docs.astral.sh/uv/getting-started/installation/#installation-methods)
+_2. Set Up a Python Environment using [uv](https://docs.astral.sh/uv/getting-started/installation/#installation-methods)_
 
 ```sh
 brew install uv
@@ -27,3 +27,4 @@ brew install uv
 ```sh
 uv sync
 ```
+
