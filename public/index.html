@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.0">
+<title>Reports</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="modulepreload" href="./_observablehq/client.6ffcfb07.js">
+<link rel="modulepreload" href="./_observablehq/runtime.9393ab6d.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.95bfbf7e.js">
+<link rel="modulepreload" href="./_import/components/utils.c868ebbf.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.16/fb0ccb6f.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/5134fe27.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/c68fbd73.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/a62ae5ce.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/37839b6a.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/d44feff9.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/6495590f.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/d496a3b3.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/ef06b1ff.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/ef1ec490.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/60bb70b3.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/33fb7288.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/5e427f4b.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/4143aac9.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/cf9b720b.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/a4e530fb.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/f8e03c56.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/3a9ac1c1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/28d1ef76.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/0c259fbf.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/da4a6ccc.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/1ee6c50d.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.6ffcfb07.js";
+import {registerFile} from "./_observablehq/stdlib.95bfbf7e.js";
+
+registerFile("./data/correlation_history.json", {"name":"./data/correlation_history.json","mimeType":"application/json","path":"./_file/data/correlation_history.11954f10.json","lastModified":1735392382232,"size":108145});
+registerFile("./data/hamiltonian_history.json", {"name":"./data/hamiltonian_history.json","mimeType":"application/json","path":"./_file/data/hamiltonian_history.888dc22c.json","lastModified":1735392355908,"size":37889});
+registerFile("./data/lattice_history.json", {"name":"./data/lattice_history.json","mimeType":"application/json","path":"./_file/data/lattice_history.be3650e5.json","lastModified":1735392355905,"size":446497});
+registerFile("./data/magnetization_history.json", {"name":"./data/magnetization_history.json","mimeType":"application/json","path":"./_file/data/magnetization_history.12aeb86d.json","lastModified":1735392355910,"size":37940});
+registerFile("./data/specific_heat.json", {"name":"./data/specific_heat.json","mimeType":"application/json","path":"./_file/data/specific_heat.eb57e116.json","lastModified":1735392382224,"size":1445});
+registerFile("./data/susceptibility.json", {"name":"./data/susceptibility.json","mimeType":"application/json","path":"./_file/data/susceptibility.518b0435.json","lastModified":1735392382225,"size":1526});
+registerFile("./data/temperature_energy.json", {"name":"./data/temperature_energy.json","mimeType":"application/json","path":"./_file/data/temperature_energy.ec87d0d4.json","lastModified":1735392370493,"size":1245});
+registerFile("./data/temperature_magnetization.json", {"name":"./data/temperature_magnetization.json","mimeType":"application/json","path":"./_file/data/temperature_magnetization.b1560c5f.json","lastModified":1735392382224,"size":1551});
+
+define({id: "12553e16", outputs: ["reshapeArray","arrayToTidyData"], body: async () => {
+const {reshapeArray, arrayToTidyData} = await import("./_import/components/utils.c868ebbf.js");
+
+return {reshapeArray,arrayToTidyData};
+}});
+
+define({id: "4ad6e281", inputs: ["FileAttachment"], outputs: ["lattice_history","hamiltonian_history","magnetization_history","temperature_energy","temperature_magnetization","specific_heat","susceptibility","correlation_history"], body: async (FileAttachment) => {
+const lattice_history = await FileAttachment("./data/lattice_history.json").json();
+const hamiltonian_history = await FileAttachment("./data/hamiltonian_history.json").json();
+const magnetization_history = await FileAttachment("./data/magnetization_history.json").json();
+const temperature_energy = await FileAttachment("./data/temperature_energy.json").json();
+const temperature_magnetization = await FileAttachment("./data/temperature_magnetization.json").json();
+const specific_heat = await FileAttachment("./data/specific_heat.json").json();
+const susceptibility = await FileAttachment("./data/susceptibility.json").json();
+const correlation_history = await FileAttachment("./data/correlation_history.json").json();
+return {lattice_history,hamiltonian_history,magnetization_history,temperature_energy,temperature_magnetization,specific_heat,susceptibility,correlation_history};
+}});
+
+define({id: "dba78130", inputs: ["lattice_history","reshapeArray","arrayToTidyData","hamiltonian_history","magnetization_history"], outputs: ["steps","anim"], body: (lattice_history,reshapeArray,arrayToTidyData,hamiltonian_history,magnetization_history) => {
+const steps = lattice_history.length;
+const anim = async function* () {
+  for (let i = 0; i < steps; ++i) {
+    const lattice = reshapeArray(lattice_history[i].lattice, lattice_history[i].shape[0], lattice_history[i].shape[1]);
+    const tidy = arrayToTidyData(lattice);
+    yield {
+      step: i,
+      hamiltonian: hamiltonian_history.slice(0, i),
+      magnetization: magnetization_history.slice(0, i),
+      tidy
+    };
+    if (i >= steps - 1)
+      i = 0;
+    await new Promise((resolve) => setTimeout(resolve, 50));
+  }
+}();
+return {steps,anim};
+}});
+
+define({id: "fd3a418f", inputs: ["display","anim","Plot","temperature_energy","temperature_magnetization","specific_heat","susceptibility"], body: (display,anim,Plot,temperature_energy,temperature_magnetization,specific_heat,susceptibility) => {
+display(anim.step);
+display(
+  Plot.plot({
+    width: 400,
+    height: 400,
+    marks: [
+      Plot.cell(anim.tidy, {
+        x: "x",
+        y: "y",
+        fill: (d) => d.value === 1 ? "blue" : "red"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(anim.hamiltonian, {
+        x: "step",
+        y: "hamiltonian"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(anim.magnetization, {
+        x: "step",
+        y: "magnetization"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(temperature_energy, {
+        x: "temperature",
+        y: "average_energy"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(temperature_magnetization, {
+        x: "temperature",
+        y: "average_magnetization"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(specific_heat, {
+        x: "temperature",
+        y: "specific_heat"
+      })
+    ]
+  })
+);
+display(
+  Plot.plot({
+    width: 400,
+    height: 200,
+    marks: [
+      Plot.line(susceptibility, {
+        x: "temperature",
+        y: "susceptibility"
+      })
+    ]
+  })
+);
+}});
+
+define({id: "4dc76b3d", inputs: ["correlation_history","Plot","display"], outputs: ["formattedData","chart"], body: (correlation_history,Plot,display) => {
+const formattedData = correlation_history.flatMap(
+  ({ temperature, distances, correlations }) => distances.map((distance, i) => ({
+    temperature,
+    distance,
+    correlation: correlations[i]
+  }))
+);
+const chart = Plot.plot({
+  marks: [
+    Plot.line(formattedData, {
+      x: "distance",
+      y: "correlation",
+      z: "temperature",
+      // Group by temperature
+      stroke: "temperature",
+      // Color lines by temperature
+      strokeWidth: 2
+    }),
+    Plot.ruleY([0])
+    // Add a baseline for reference
+  ],
+  color: {
+    type: "linear",
+    // Use a gradient color scale
+    domain: [Math.min(...formattedData.map((d) => d.temperature)), Math.max(...formattedData.map((d) => d.temperature))],
+    label: "Temperature (T)"
+  },
+  x: { label: "Distance" },
+  y: { label: "Correlation" },
+  height: 500,
+  width: 800
+});
+display(chart);
+return {formattedData,chart};
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="reports" tabindex="-1"><a class="observablehq-header-anchor" href="#reports">Reports</a></h1>
+<div class="observablehq observablehq--block"><!--:12553e16:--></div>
+<div class="observablehq observablehq--block"><!--:4ad6e281:--></div>
+<div class="observablehq observablehq--block"><!--:dba78130:--></div>
+<div class="observablehq observablehq--block"><!--:fd3a418f:--></div>
+<div class="observablehq observablehq--block"><!--:4dc76b3d:--></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-12-28T14:34:46">Dec 28, 2024</a>.</div>
+</footer>
+</div>
+</body>
+</html>
