@@ -1,7 +1,8 @@
 # Ising Model Simulation
 
 This repository contains a Python implementation of the 2D Ising model using the Metropolis algorithm. The simulation measures various thermodynamic and statistical properties, such as energy, magnetization, susceptibility, specific heat, and correlations, across different temperatures.
-Features
+
+Features:
 
 - Simulate the 2D Ising model on a square lattice.
 - Measure thermodynamic properties (e.g., energy, magnetization).
@@ -61,7 +62,8 @@ You should see an output like:
   ...continued output...
 ```
 
-It typically takes the simulation 60 seconds to run.
+- It typically takes the simulation 60 seconds to run.
+- It saves all charts and data to the folder `reports/data`.
 
 ### Typesrcript and Observable Framework installation
 
