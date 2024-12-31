@@ -102,9 +102,7 @@ display(runningSimulation.simulation.getPlots()[2]);
 
 <div class="grid grid-cols-2"><div>
 
-```ts
-display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.temperature_energy, { x: 'temperature', y: 'average_energy' })] }));
-```
+![](./data/energy_vs_temperature.png)
 
 
 </div><div>
@@ -121,9 +119,7 @@ display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.temperature_
 
 <div class="grid grid-cols-2"><div>
 
-```ts
-display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.temperature_magnetization, { x: 'temperature', y: 'average_magnetization' })] }));
-```
+![](./data/magnetization_vs_temperature.png)
 
 </div><div>
 
@@ -139,10 +135,7 @@ display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.temperature_
 
 <div class="grid grid-cols-2"><div>
 
-```ts
-display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.specific_heat, { x: 'temperature', y: 'specific_heat' })] }));
-```
-
+![](./data/specific_heat_vs_temperature.png)
 
 </div><div>
 
@@ -159,9 +152,7 @@ Specific heat measures how the system's internal energy changes with temperature
 
 <div class="grid grid-cols-2"><div>
 
-```ts
-display(Plot.plot({ width: 400, height: 200, marks: [Plot.line(data.susceptibility, { x: 'temperature', y: 'susceptibility' })] }));
-```
+![](./data/susceptibility_vs_temperature.png)
 
 </div><div>
 
@@ -177,68 +168,40 @@ This measures how sensitive the magnetization is to temperature.
 
 <div class="grid grid-cols-2"><div>
 
+![](./data/time_correlations.png)
 
-```ts
-const tidyCorrelations = data.correlations.flatMap(d => 
-  d.correlations.map((value, index) => ({
-    temperature: d.temperature,
-    distance: index + 1,
-    correlation: value
-  }))
-)
+</div><div>
 
-display(
-  Plot.plot({
-    marks: [
-      Plot.line(tidyCorrelations, { 
-        x: "distance", 
-        y: "correlation", 
-        stroke: "temperature", 
-        strokeWidth: 2, 
-        title: "temperature" 
-      }),
-      Plot.dot(tidyCorrelations, { 
-        x: "distance", 
-        y: "correlation", 
-        fill: "temperature",
-        // dx: 5,
-        // dy: -5
-      })
-    ],
-    x: { label: "Distance (r)" },
-    y: { label: "Correlation C(r)" },
-    color: { scheme: "reds", label: "Temperature (T)", legend:true },
+## Dynamic Correlations
 
-    width: 400,
-    height: 200
-  })
-)
-```
+- __Low Temperatures (T < Tc):__ Correlation decays slowly, indicating ordered spins (ferromagnetic phase). The system retains memory over many Monte Carlo steps.
+- __High Temperatures (T > Tc):__ Correlation decays quickly due to spin disorder (paramagnetic phase). The system loses memory rapidly.
+- __Critical Temperature (T ≈ Tc):__ Correlation decays slower than at high temperatures but faster than at low temperatures, showing critical slowing down and long-range fluctuations.
+
+The graph’s decay trend and rate reveal how spins retain memory, with slower decay near TcTc​ indicating critical phenomena.
+
+</div></div>
+
+---
+
+<div class="grid grid-cols-2"><div>
 
 ![](./data/radial_correlations.png)
 
 </div><div>
 
-## Correlations
+## Spatial Correlations
 
-__Low Temperatures (Below Critical Temperature Tc):__
+__Low Temperatures (T < Tc):__
+Spins are highly ordered (ferromagnetic phase), leading to strong correlations that start near 1 and decay slowly over long distances, indicating long-range order.
 
-- High Correlations: Spins are highly ordered (ferromagnetic phase), so the correlation values will start high (close to 1) and decay slowly as the distance increases.
-- Long-Range Order: The decay is minimal because spins align over long distances.
+__Near Critical Temperature (T ≈ Tc):__
+Correlations decay more slowly due to critical fluctuations and scale invariance. The correlation length diverges, potentially spanning the entire system as order transitions to disorder.
 
-__Near the Critical Temperature (T≈Tc​):__
-
-- Slower Decay: Correlations decay more slowly with distance due to critical fluctuations and emerging scale invariance.
-- Diverging Correlation Length: Near TcTc​, the system is transitioning from order to disorder, and the correlation length (range over which spins are correlated) grows significantly, possibly spanning the entire lattice.
-
-__High Temperatures (Above Tc):__
-
-- Rapid Decay: Spins become uncorrelated (paramagnetic phase). Correlation values will drop off rapidly to zero as the distance increases.
-- Short-Range Order: Correlations exist only over very short distances due to thermal noise dominating spin interactions.
+__High Temperatures (T > Tc):__
+Spins become uncorrelated (paramagnetic phase), with correlations decaying rapidly to zero. Only short-range order remains due to dominant thermal noise.
 
 __Expected Features:__
-
-- Curve Shape: At low TT, the curve starts near 1 and decays slowly. At high TT, the curve starts lower and decays rapidly.
-- Temperature Dependency: As TT increases, the curves at different temperatures will show progressively faster decay.
+At low T, the correlation curve starts near 1 and decays slowly. At high T, it starts lower and decays quickly. As T increases, decay becomes progressively faster across curves.
 
 </div></div>
