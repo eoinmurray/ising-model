@@ -50,10 +50,10 @@ in our sim J is always 1.0, so the critical temp is ${tex`\approx`} 2.27.
 ```ts
 const alpha = await FileAttachment('data/alpha.zip').zip()
 ```
-
+<!-- 
 ```ts
 display(alpha)
-```
+``` -->
 
 ```ts
 const data = await alpha.file('reports/data/alpha/lattice_states.json').json()
@@ -79,6 +79,8 @@ const reshapedData = data.map(datum => {
 const temps = [...new Set(reshapedData.map(d => d.temperature))].reverse()
 const aRun = reshapedData.filter(d => d.temperature === temps[0])
 ```
+
+---
 
 ## Lattice state plot
 
@@ -120,12 +122,13 @@ display(
 Here we plot the lattice state for various temperatures and time steps, play around with the sliders to 
 view the dynamics behaviour of the lattice.
 
-## Identifying the critical point
+The simulation calculates the lattice states using Glauber dynamics in the `update_step_numba` function. At each step, a random site is picked, and the change in energy (${tex`\delta E`}) due to flipping that spin is computed from the local interactions (the sum of the nearest neighbors’ spins and any external field). The flip is then accepted with probability ${tex`p_{flip} = \frac{1}{1+e^{\delta E / T}}`}​. Repeating this process for many steps yields a time evolution of the spin configuration.
 
-We can plot the following graphs: magnetization, average_energy, susceptibility, and specific_heat.
-- For magnetization we should see magnetization drop at the critical point
-- For average_energy we should see the center of an ${tex`S`} curve at the critical point.
-- For susceptibility and specific_heat we should see a peak at the critical point.
+At low temperatures, we often see large, stable clusters where spins align and rarely flip, indicating an ordered phase. Near critical temperature (${tex`T_c`}), these clusters form and dissolve in a more balanced manner, and we catch glimpses of interesting domain structures. At high temperatures, spins will flip frequently and produce a more disordered or “noisy” lattice with low magnetization.
+
+---
+
+## Identifying the critical point
 
 ```ts
 const metricToPlot = view(Inputs.select(['magnetization', 'average_energy', 'susceptibility', 'specific_heat']))
@@ -143,6 +146,13 @@ display(
   })
 )
 ```
+
+We can plot the following graphs: magnetization, average_energy, susceptibility, and specific_heat.
+- For magnetization we should see magnetization drop at the critical point
+- For average_energy we should see the center of an ${tex`S`} curve at the critical point.
+- For susceptibility and specific_heat we should see a peak at the critical point.
+
+---
 
 ## Correlations
 
@@ -196,6 +206,12 @@ display(
 )
 ```
 
+Dynamic correlations are by comparing each lattice state with the very first state of the simulation (for each temperature). Concretely, the code takes an average of the product ⟨si(0)×si(t)⟩⟨si​(0)×si​(t)⟩ for all lattice spins. This measure gives us a sense of how the initial spin configuration correlates with subsequent configurations over time. If the system is highly ordered and remains that way, the dynamic correlation stays closer to 1. If it quickly randomizes, then the correlation decays toward 0.
+
+When plotting these values, you want to see a correlation curve that starts near 1 (at t=0t=0) and then decays with time. Below the critical temperature, that decay can be slower and decays to a constant value as the system is ordered. Above the critical temperature, we see a faster drop to nearly zero, showing that the system loses memory of its initial arrangement more quickly.
+
+At the critical temperature we see the correlations decay slowly, towards a constant value indicating the existence of long range correlations in the system as is in a state between order and disorder.
+
 ### 2. Spatial Correlations
 
 ```ts
@@ -222,3 +238,7 @@ display(
   })
 )
 ```
+
+Spatial correlations are calculated by shifting the lattice in all possible directions (dx, dy) and measuring how much each site’s spin correlates with its shifted partner. That sum gets binned by the distance ${tex`r=\sqrt{dx^2+dy^2}`}​. In the script, it’s done with a loop that applies np.roll on the lattice to shift it, computes the pairwise product lattice * shifted_lattice, and accumulates results at the correct radial distance. Finally, each bin is normalized by the number of sites that contributed. This gives the correlation value as a function of distance.
+
+When we plot these spatial correlations, you’ll typically see them decay as distance increases. At high temperature, the correlation should fall off quickly, indicating that spins behave more independently. Near or below the critical temperature, the correlation length grows, and we see a slower or even power-law–like decay, indicating large-scale domains of aligned spins.

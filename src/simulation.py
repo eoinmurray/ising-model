@@ -280,7 +280,7 @@ def main():
     L=100
     J=1.0
     steps=10000
-    save_every=100
+    save_every= int(steps / 100)
     output_dir="reports/data/alpha"
 
     print("[MAIN] Starting simulation")
