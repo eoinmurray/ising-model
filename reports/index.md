@@ -206,7 +206,7 @@ display(
 )
 ```
 
-Dynamic correlations are by comparing each lattice state with the very first state of the simulation (for each temperature). Concretely, the code takes an average of the product ⟨si(0)×si(t)⟩⟨si​(0)×si​(t)⟩ for all lattice spins. This measure gives us a sense of how the initial spin configuration correlates with subsequent configurations over time. If the system is highly ordered and remains that way, the dynamic correlation stays closer to 1. If it quickly randomizes, then the correlation decays toward 0.
+Dynamic correlations are by comparing each lattice state with the very first state of the simulation (for each temperature). The code takes an average of the product ${tex`\langle s_i(0) \times s_i(t) \rangle`} for all lattice spins. This measure gives us a sense of how the initial spin configuration correlates with subsequent configurations over time. If the system is highly ordered and remains that way, the dynamic correlation stays closer to 1. If it quickly randomizes, then the correlation decays toward 0.
 
 When plotting these values, you want to see a correlation curve that starts near 1 (at t=0t=0) and then decays with time. Below the critical temperature, that decay can be slower and decays to a constant value as the system is ordered. Above the critical temperature, we see a faster drop to nearly zero, showing that the system loses memory of its initial arrangement more quickly.
 

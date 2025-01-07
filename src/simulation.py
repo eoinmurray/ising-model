@@ -279,16 +279,16 @@ def main():
     temperatures = [1, 1.5, 2, 2.27, 2.5, 3, 3.5, 4, 4.5, 5]
     L=100
     J=1.0
-    steps=10000
-    save_every= int(steps / 100)
+    steps=100000
+    save_every= int(steps / 1000)
     output_dir="reports/data/alpha"
 
     print("[MAIN] Starting simulation")
 
     df = pd.DataFrame()
     
-    spins = -np.ones((L, L))  # Start with all spins down
-    # spins = np.random.choice([-1, 1], size=(L, L))  # Initialize spins randomly
+    # spins = -np.ones((L, L))  # Start with all spins down
+    spins = np.random.choice([-1, 1], size=(L, L))  # Initialize spins randomly
 
     for temp in temperatures:
         result = Simulation(
