@@ -279,8 +279,8 @@ def main():
     temperatures = [1, 1.5, 2, 2.27, 2.5, 3, 3.5, 4, 4.5, 5]
     L=100
     J=1.0
-    steps=100000
-    save_every= int(steps / 1000)
+    steps=1000000
+    save_every=int(steps / 1000)
     output_dir="reports/data/alpha"
 
     print("[MAIN] Starting simulation")

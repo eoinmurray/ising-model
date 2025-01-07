@@ -4,6 +4,9 @@
 import { reshapeArray, toTidyData } from './components/utils.js'
 ```
 
+The Ising is a tool used in statistical physics to study phase transitions and collective dynamics in systems with
+many interacting parts. Initially designed to represent ferromagnetism, it models spins on a lattice that can take one of two states, interacting with their neighbors. Its applications extend to areas like neural network activity, protein folding and quantum cluster states. The model's simplicity allows for analytical solutions in certain cases and computational approaches in others, making it broadly applicable for exploring the connection between microscopic interactions and macroscopic phenomena.
+
 Here I'm making a small monte carlo simulation of an Ising Model with Glauber dynamics. 
 
 ### 1. **Energy of the Ising Model**:
@@ -179,7 +182,7 @@ const tidySpatialCorrelations = spatial_correlations.flatMap(d => {
 ```
 
 
-### 1. Dynamic Correlations
+<!-- ### 1. Dynamic Correlations
 
 ```ts
 display(
@@ -193,7 +196,7 @@ display(
       })
     ],
     x: {
-      domain: [0, 50]
+      // domain: [0, 50]
     },
     y: {
       domain: [0, 1]
@@ -210,9 +213,7 @@ Dynamic correlations are by comparing each lattice state with the very first sta
 
 When plotting these values, you want to see a correlation curve that starts near 1 (at t=0t=0) and then decays with time. Below the critical temperature, that decay can be slower and decays to a constant value as the system is ordered. Above the critical temperature, we see a faster drop to nearly zero, showing that the system loses memory of its initial arrangement more quickly.
 
-At the critical temperature we see the correlations decay slowly, towards a constant value indicating the existence of long range correlations in the system as is in a state between order and disorder.
-
-### 2. Spatial Correlations
+At the critical temperature we see the correlations decay slowly, towards a constant value indicating the existence of long range correlations in the system as is in a state between order and disorder. -->
 
 ```ts
 display(
@@ -239,6 +240,6 @@ display(
 )
 ```
 
-Spatial correlations are calculated by shifting the lattice in all possible directions (dx, dy) and measuring how much each site’s spin correlates with its shifted partner. That sum gets binned by the distance ${tex`r=\sqrt{dx^2+dy^2}`}​. In the script, it’s done with a loop that applies np.roll on the lattice to shift it, computes the pairwise product lattice * shifted_lattice, and accumulates results at the correct radial distance. Finally, each bin is normalized by the number of sites that contributed. This gives the correlation value as a function of distance.
+Spatial correlations are calculated by shifting the last step lattice in all possible directions (dx, dy) and measuring how much each site’s spin correlates with its shifted partner. That sum gets binned by the distance ${tex`r=\sqrt{dx^2+dy^2}`}​. In the script, it’s done with a loop that applies np.roll on the lattice to shift it, computes the pairwise product lattice * shifted_lattice, and accumulates results at the correct radial distance. Finally, each bin is normalized by the number of sites that contributed. This gives the correlation value as a function of distance.
 
 When we plot these spatial correlations, you’ll typically see them decay as distance increases. At high temperature, the correlation should fall off quickly, indicating that spins behave more independently. Near or below the critical temperature, the correlation length grows, and we see a slower or even power-law–like decay, indicating large-scale domains of aligned spins.
